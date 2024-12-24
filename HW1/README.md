@@ -35,3 +35,5 @@
 ### Опционально (задание со "звёздочкой"):
 
 1. Приложение должно корректно запускаться с помощью "java -jar"
+   1. mvn clean package
+   2. java -jar target/my-application.jar

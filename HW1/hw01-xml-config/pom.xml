@@ -105,7 +105,24 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.3.0</version>
-                <!--Настроить для создания jar с зависимостями-->
+                <executions>
+                    <execution>
+                        <phase>package</phase> <!-- Укажите, что плагин должен быть выполнен на фазе упаковки -->
+                        <goals>
+                            <goal>shade</goal> <!-- Цель плагина: создание "fat" JAR -->
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <excludes>
+                                    <!-- Исключить JAR файлы, которые не должны попадать в результат -->
+                                </excludes>
+                            </artifactSet>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>all</shadedClassifierName> <!-- Дополнительный суффикс для именования jar -->
+                            <finalName>my-application</finalName> <!-- Имя финального JAR -->
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
