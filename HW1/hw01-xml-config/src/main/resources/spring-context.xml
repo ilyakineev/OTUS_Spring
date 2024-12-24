@@ -20,7 +20,8 @@
     </bean>
 
     <bean id="fileNameProvider" class="ru.otus.hw.config.AppProperties">
-        <constructor-arg name="testFileName" value="questions.csv"/>
+        <!-- Для разнообразия через сеттер -->
+        <property name="testFileName" value="questions.csv"/>
     </bean>
 
     <bean id="ioService" class="ru.otus.hw.service.StreamsIOService">
