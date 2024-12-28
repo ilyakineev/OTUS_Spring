@@ -23,7 +23,6 @@ public class TestServiceImpl implements TestService {
                 j.getAndIncrement();
                 ioService.printFormattedLine("  " + j + " " + answer.text());
             });
-
         });
     }
 }
